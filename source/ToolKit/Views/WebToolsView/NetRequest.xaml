@@ -1,0 +1,104 @@
+﻿<UserControl x:Class="com.rungine.toolkit.Views.WebToolsView.NetRequest"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <!-- 引入样式文件 -->
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resource/Style/TabControlStyle.xaml" />
+                <!-- 是工程的相对路径 -->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <TabControl Style="{StaticResource TabControlStyle}">
+        <TabItem Name="tabItem1" Header="WEBAPI">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="28"/>
+                    <RowDefinition Height="25*"/>
+                    <RowDefinition Height="25*"/>
+                    <RowDefinition Height="25*"/>
+                    <RowDefinition Height="25*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Margin="0,3,0,3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*" MinWidth="100" MaxWidth="400"/>
+                        <ColumnDefinition Width="50"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <ComboBox >
+                            <TextBlock Text="GET"/>
+                            <TextBlock Text="POST"/>
+                            <TextBlock Text="PUT"/>
+                            <TextBlock Text="PATCH"/>
+                            <TextBlock Text="DELETE"/>
+                            <TextBlock Text="COPY"/>
+                            <TextBlock Text="HEAD"/>
+                            <TextBlock Text="OPTIONS"/>
+                            <TextBlock Text="LINK"/>
+                            <TextBlock Text="UNLINK"/>
+                            <TextBlock Text="PURGE"/>
+                        </ComboBox>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <TextBox Margin="10,0,10,0" />
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Button Content="Send"/>
+                    </Grid>
+                </Grid>
+                <Border Grid.Row="0" Grid.ColumnSpan="4" BorderThickness="0,0,0,1" BorderBrush="#434346"></Border>
+                <Grid Grid.Row="1">
+                    <GroupBox Header="URL Parameter" Foreground="#999999" BorderThickness="0">
+                        <ScrollViewer  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                            <Grid>
+                                
+                            </Grid>
+                        </ScrollViewer>
+                    </GroupBox>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <GroupBox Header="Header" Foreground="#999999" BorderThickness="0">
+                        <ScrollViewer  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                            <Grid>
+
+                            </Grid>
+                        </ScrollViewer>
+                    </GroupBox>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <GroupBox Header="Body Parameter" Foreground="#999999" BorderThickness="0">
+                        <ScrollViewer  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                            <Grid>
+
+                            </Grid>
+                        </ScrollViewer>
+                    </GroupBox>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <GroupBox Header="Response" Foreground="#999999" BorderThickness="0">
+                        <ScrollViewer  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                            <Grid>
+
+                            </Grid>
+                        </ScrollViewer>
+                    </GroupBox>
+                </Grid>
+            </Grid>
+        </TabItem>
+        <TabItem Name="tabItem2" Header="Socket">
+            
+        </TabItem>
+        <TabItem Name="tabItem3" Header="About" DockPanel.Dock="Right" HorizontalAlignment="Right">
+            <Grid>
+                <TextBlock Text="Page 3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Grid>
+        </TabItem>
+        <TabItem/>
+    </TabControl>
+</UserControl>

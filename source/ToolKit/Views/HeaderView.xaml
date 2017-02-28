@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="com.rungine.toolkit.Views.HeaderView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="80" MinWidth="550" Loaded="UserControl_Loaded">
+    <!-- 引入样式文件 -->
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resource/Style/MenuStyle.xaml" />
+                <ResourceDictionary Source="/Resource/Style/WindowButtonStyle.xaml" />
+                <!-- 是工程的相对路径 -->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="25"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" x:Name="gridTitle" MouseDown="gridTitle_MouseDown">
+                <Image Source="pack://siteoforigin:,,,/Resources/toolkit_0.png" HorizontalAlignment="Left" Width="25" Height="25" Margin="5,-3,0,0" />
+                <Label x:Name="lblTitle" Content="Tool Kit 开发工具包 - ToolKit.RunGine.Com" Foreground="#999999" Padding="35,5,0,0"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Button x:Name="btnMinWindow" Content="_" Style="{StaticResource WindowButton}" Click="btnMinWindow_Click"/>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Button x:Name="btnMaxWindow" Content="□" Style="{StaticResource WindowButton}" Click="btnMaxWindow_Click"/>
+            </Grid>
+            <Grid Grid.Column="3">
+                <Button x:Name="btnClose" Content="X" Style="{StaticResource WindowButton}" Click="btnClose_Click"/>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Menu Background="#2d2d30" Foreground="White">
+                <MenuItem Header="Seting">
+                    <MenuItem Header="菜单1"/>
+                    <MenuItem Header="菜单菜单2">
+                        <MenuItem Header="菜单1"/>
+                        <MenuItem Header="菜单2"/>
+                    </MenuItem>
+                    <MenuItem Header="Exit" Click="MenuItem_Exit_Click"/>
+                </MenuItem>
+                <MenuItem Header="Web Tools">
+                    <MenuItem Header="Net Request"/>
+                    <MenuItem Header="Email Tool"/>
+                </MenuItem>
+                <MenuItem Header="Code Tools">
+                </MenuItem>
+                <MenuItem Header="Help">
+                    <MenuItem Header="About"/>
+                    <MenuItem Header="Source In Github"/>
+                </MenuItem>
+            </Menu>
+        </Grid>
+        <Grid Grid.Row="2">
+        </Grid>
+        <Border Grid.Row="0" Grid.ColumnSpan="4" BorderThickness="0,0,0,1" BorderBrush="#434346"></Border>
+    </Grid>
+</UserControl>
